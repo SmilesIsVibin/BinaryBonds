@@ -16,19 +16,11 @@ public class RobotFollow : MonoBehaviour
     public float distance;
     public bool isInteracting;
 
-    public GameObject isIdle;
-    public GameObject isWalking;
     private void Awake()
     {
         robotNavMesh = GetComponent<NavMeshAgent>();
         robotNavMesh.enabled = false;
         isFollowing = false;
-    }
-
-    void Start()
-    {
-        isIdle.SetActive(true);
-        isWalking.SetActive(false);
     }
 
     private void Update()
@@ -62,24 +54,18 @@ public class RobotFollow : MonoBehaviour
                 {
                     playerIsFarEnough = false;
                     animator.SetFloat("InputMagnitude", 0, 0.05f, Time.deltaTime);
-                    isIdle.SetActive(true);
-                    isWalking.SetActive(false);
                 }
                 if (playerIsFarEnough && !isInteracting && !robotController.isActive)
                 {
                     robotNavMesh.SetDestination(girl.transform.position);
                     transform.LookAt(lookPosition);
                     animator.SetFloat("InputMagnitude", robotController.maxSpeed, 0.05f, Time.deltaTime);
-                    isIdle.SetActive(false);
-                    isWalking.SetActive(true);
                     Debug.Log("Animate Walking");
                 }
             }
             else
             {
                 animator.SetFloat("InputMagnitude", 0, 0.05f, Time.deltaTime);
-                isIdle.SetActive(true);
-                isWalking.SetActive(false);
             }
         }
     }

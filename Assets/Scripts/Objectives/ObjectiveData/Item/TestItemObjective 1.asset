@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40545dc4909c3345b24f3cd2f442de1, type: 3}
+  m_Name: TestItemObjective 1
+  m_EditorClassIdentifier: 
+  title: Test Item 2
+  description: Find Boxes
+  requiresAreaTransition: 0
+  prerequisiteObjective: {fileID: 11400000, guid: 10b11eaa890a41d42b578392cce94e60, type: 2}
+  nextObjective: {fileID: 0}
+  itemRequired: Box
+  quantityRequired: 1

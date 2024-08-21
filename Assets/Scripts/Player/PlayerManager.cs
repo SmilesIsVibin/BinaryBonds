@@ -19,17 +19,6 @@ public class PlayerManager : MonoBehaviour
     public GameObject girlIconDeactive;
     public GameObject robotIconActive;
     public GameObject robotIconDeactive;
-    public GameObject girlTracker;
-    public GameObject robotTracker;
-
-    [Header("Distance")]
-    public RawImage girlPic;
-    public float minDistance;
-    public float maxDistance;
-
-    [Header("Player Cameras")]
-    public CinemachineFreeLook girlCam;
-    public CinemachineFreeLook robotCam;
 
     // Start is called before the first frame update
     void Start()
@@ -52,18 +41,6 @@ public class PlayerManager : MonoBehaviour
                     SwitchPlayerCameras(0);
                 }
             }
-
-            if(Vector3.Distance(girlPlayer.transform.position, robotPlayer.transform.position) <= minDistance)
-            {
-                girlPic.color = Color.green;
-            }else if (Vector3.Distance(girlPlayer.transform.position, robotPlayer.transform.position) > minDistance && Vector3.Distance(girlPlayer.transform.position, robotPlayer.transform.position) < maxDistance)
-            {
-                girlPic.color = Color.yellow;
-            }
-            else
-            {
-                girlPic.color = Color.red;
-            }
         }
     }
 
@@ -73,24 +50,21 @@ public class PlayerManager : MonoBehaviour
         {
             case 0:
                 girlPlayer.isActive = true;
-                girlCam.Priority = 10;
+                girlPlayer.currentCam.Priority = 10;
                 girlIconActive.SetActive(true);
                 girlIconDeactive.SetActive(false);
                 robotPlayer.isActive = false;
-                robotCam.Priority = 0;
+                robotPlayer.currentCam.Priority = 0;
                 robotIconActive.SetActive(false);
                 robotIconDeactive.SetActive(true);
-
-                girlTracker.SetActive(false);
-                robotTracker.SetActive(true);
                 break;
             case 1:
                 girlPlayer.isActive = false;
-                girlCam.Priority = 0;
+                girlPlayer.currentCam.Priority = 0;
                 girlIconActive.SetActive(false);
                 girlIconDeactive.SetActive(true);
                 robotPlayer.isActive = true;
-                robotCam.Priority = 10;
+                robotPlayer.currentCam.Priority = 10;
                 if (robotFollow.isFollowing)
                 {
                     robotFollow.isFollowing = false;
@@ -99,22 +73,16 @@ public class PlayerManager : MonoBehaviour
                 }
                 robotIconActive.SetActive(true);
                 robotIconDeactive.SetActive(false);
-
-                girlTracker.SetActive(true);
-                robotTracker.SetActive(false);
                 break;
             default:
                 girlPlayer.isActive = true;
-                girlCam.Priority = 10;
+                girlPlayer.currentCam.Priority = 10;
                 girlIconActive.SetActive(true);
                 girlIconDeactive.SetActive(false);
                 robotPlayer.isActive = false;
-                robotCam.Priority = 0;
+                robotPlayer.currentCam.Priority = 0;
                 robotIconActive.SetActive(false);
                 robotIconDeactive.SetActive(true);
-
-                girlTracker.SetActive(false);
-                robotTracker.SetActive(true);
                 break;
         }
     }

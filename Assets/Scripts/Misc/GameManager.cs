@@ -26,31 +26,33 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Slider sfxVolumeSlider;
     [SerializeField] public AudioMixer audioMixer;
 
+    /*
     [Header("Dev Panel")]
     [SerializeField] public GameObject debugPanel;
     [Header("Elara Debug Panel")]
-    [SerializeField] public GameObject elaraDebugPanel;
+    [SerializeField] public GameObject elaraDebugPanel;*/
     [SerializeField] public PlayerController elaraController;
+    /*
     [SerializeField] public TMP_InputField elaraSprintSpeed;
     [SerializeField] public TMP_InputField elaraJumpHeight;
 
     [Header("Happy Debug Panel")]
-    [SerializeField] public GameObject happyDebugPanel;
+    [SerializeField] public GameObject happyDebugPanel;*/
     [SerializeField] public RobotController happyController;
+    /*
     [SerializeField] public TMP_InputField happySprintSpeed;
     [SerializeField] public TMP_InputField happyJumpHeight;
+    */
 
     void Start()
     {
         Instance = this;
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
-        debugPanel.SetActive(false);
         winLevelPanel.SetActive(false);
         Time.timeScale = 1f;
         SetUpVolumeLevels();
         isPaused = false;
-        SetupDebugPanel();
     }
 
     void Update()
@@ -83,14 +85,12 @@ public class GameManager : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(true);
-        debugPanel.SetActive(false);
     }
 
     public void CloseSettingsMenu()
     {
         pauseMenu.SetActive(true);
         settingsMenu.SetActive(false);
-        debugPanel.SetActive(false);
     }
 
     public void RestartGame()
@@ -110,7 +110,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
-        debugPanel.SetActive(false);
         audioSource.UnPause();
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -215,13 +214,13 @@ public class GameManager : MonoBehaviour
         aboutMenu.SetActive(true);
     }
 
+        /*
     public void OpenDebugTools()
     {
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
         debugPanel.SetActive(true);
     }
-
     private void SetupDebugPanel()
     {
         if(happyController != null)
@@ -275,6 +274,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+    */
 
     public void WinLevel()
     {
