@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Menu : MonoBehaviour
 {
@@ -23,17 +24,47 @@ public class Menu : MonoBehaviour
     [SerializeField] public GameObject graphicsMenu;
     [SerializeField] public GameObject aboutMenu;
 
+    [Header("Level Information")]
+    [SerializeField] public List<LevelInfo> levelList = new List<LevelInfo>();
+    [SerializeField] private LevelInfo selectedLevel;
+    [SerializeField] private TMP_Text levelNameText;
+    [SerializeField] private TMP_Text levelDescriptionText;
+    [SerializeField] private TMP_Text levelObjectivesText;
+    [SerializeField] private GameObject levelInfoPanel;
+
     void Start()
     {
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
         SetUpVolumeLevels();
         ViewAudioSettings();
+        CloseSelectLevel();
     }
 
-    public void GoToNextLevelScene(string sceneName)
+    public void OpenSelectLevel(int index){
+        for(int i = 0; i<levelList.Count;i++){
+            if(i == index){
+                selectedLevel = levelList[i];
+                SetUpLevelInfoScreen();
+                return;
+            }
+        }
+    }
+
+    public void CloseSelectLevel(){
+        levelInfoPanel.SetActive(false);
+    }
+
+    private void SetUpLevelInfoScreen(){
+        levelNameText.text = selectedLevel.levelName;
+        levelDescriptionText.text = selectedLevel.levelDescription;
+        levelObjectivesText.text = selectedLevel.levelObjectives;
+        levelInfoPanel.SetActive(true);
+    }
+
+    public void GoToLevelScene()
     {
-        SceneManager.LoadSceneAsync(sceneName);
+        SceneManager.LoadSceneAsync(selectedLevel.levelIndexName);
     }
 
     #region Menu Navigation
@@ -164,4 +195,15 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
     }
+}
+
+[System.Serializable]
+public class LevelInfo
+{
+    public string levelName;
+    [TextArea]
+    public string levelDescription;
+    [TextArea]
+    public string levelObjectives;
+    public string levelIndexName;
 }

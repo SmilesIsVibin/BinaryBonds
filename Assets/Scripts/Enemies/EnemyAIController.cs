@@ -108,7 +108,7 @@ public class EnemyAIController : MonoBehaviour
     void Suspicious()
     {
         agent.isStopped = true;
-        detection.IncreaseSuspicionLevel();
+        detection.HandleDetection(); // Adjusted to use detection properly
 
         if (detection.IsPlayerDetected)
         {

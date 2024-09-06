@@ -7,7 +7,7 @@ public class EnemyDetection : MonoBehaviour
     public LayerMask transparentObjectsMask; // Mask for objects that are transparent or partially block view (e.g., glass, fences)
     public float viewAngle = 45f;
     public float viewDistance = 10f;
-    public float detectionTime = 2f;
+    public float detectionTime = 2f; // Time to fully detect the player at a close distance
     public float suspicionDecayRate = 1f;
 
     private float detectionTimer = 0f;
@@ -37,7 +37,7 @@ public class EnemyDetection : MonoBehaviour
                 // Handle transparent objects
                 if (((1 << hit.collider.gameObject.layer) & transparentObjectsMask) != 0)
                 {
-                    IncreaseSuspicionLevel();
+                    IncreaseSuspicionLevel(distanceToPlayer);
                 }
                 else
                 {
@@ -46,7 +46,7 @@ public class EnemyDetection : MonoBehaviour
             }
             else
             {
-                IncreaseSuspicionLevel();
+                IncreaseSuspicionLevel(distanceToPlayer);
             }
         }
         else
@@ -55,9 +55,19 @@ public class EnemyDetection : MonoBehaviour
         }
     }
 
-    public void IncreaseSuspicionLevel()
+    private void IncreaseSuspicionLevel(float distanceToPlayer)
     {
-        SuspicionLevel += Time.deltaTime;
+        // Adjust detection speed based on player's proximity
+        detectionTimer += Time.deltaTime * (1f / Mathf.Max(distanceToPlayer, 1f));
+
+        if (detectionTimer >= detectionTime)
+        {
+            SuspicionLevel = detectionTime;
+        }
+        else
+        {
+            SuspicionLevel = detectionTimer;
+        }
 
         if (IsPlayerDetected)
         {
@@ -74,15 +84,21 @@ public class EnemyDetection : MonoBehaviour
     {
         if (SuspicionLevel > 0)
         {
-            SuspicionLevel -= suspicionDecayRate * Time.deltaTime;
+            detectionTimer -= suspicionDecayRate * Time.deltaTime;
 
-            if (SuspicionLevel <= 0)
+            if (detectionTimer <= 0)
             {
                 SuspicionLevel = 0;
+                detectionTimer = 0;
+
                 if (enemyAI.currentState == EnemyAIController.EnemyState.Suspicious)
                 {
                     enemyAI.SetState(EnemyAIController.EnemyState.Returning);
                 }
+            }
+            else
+            {
+                SuspicionLevel = detectionTimer;
             }
         }
     }

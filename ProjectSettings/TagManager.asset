@@ -8,6 +8,9 @@ TagManager:
   - Player_Happy
   - PickUp
   - Ground
+  - Obstacle
+  - Walls
+  - PushableBox
   layers:
   - Default
   - TransparentFX
