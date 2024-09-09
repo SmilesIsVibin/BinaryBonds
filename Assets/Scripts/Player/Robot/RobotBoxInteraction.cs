@@ -57,7 +57,7 @@ public class RobotBoxInteraction : MonoBehaviour
     private void StartInteraction(BoxPullPush box)
     {
         isInteracting = true;
-        robotController.isInteracting = true;
+        robotController.GrabBox();
         box.CreateFixedJoint();
         box.AttachToPlayer();
 
@@ -68,7 +68,7 @@ public class RobotBoxInteraction : MonoBehaviour
     private void StopInteraction()
     {
         isInteracting = false;
-        robotController.isInteracting = false;
+        robotController.ReleaseBox();
         if (currentBox != null)
         {
             currentBox.DetachFromPlayer();

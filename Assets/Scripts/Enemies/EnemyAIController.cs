@@ -10,6 +10,7 @@ public class EnemyAIController : MonoBehaviour
     private EnemyDetection detection;
     private EnemyChase chase;
     private EnemyAlertSystem alertSystem;
+    public Animator animator;
 
     public Transform[] patrolPoints;
     public float idleTimeMin = 2f;
@@ -19,6 +20,7 @@ public class EnemyAIController : MonoBehaviour
     private int currentPatrolIndex;
     private float idleTimer;
     private bool isIdle;
+    public bool alerted;
 
     void Start()
     {
@@ -71,6 +73,8 @@ public class EnemyAIController : MonoBehaviour
         {
             isIdle = true;
             idleTimer = Random.Range(idleTimeMin, idleTimeMax);
+            animator.SetBool("isIdling", true);
+            animator.SetBool("isPatrolling", false);
         }
 
         idleTimer -= Time.deltaTime;
@@ -102,6 +106,8 @@ public class EnemyAIController : MonoBehaviour
         {
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
             agent.SetDestination(patrolPoints[currentPatrolIndex].position);
+            animator.SetBool("isIdling", false);
+            animator.SetBool("isPatrolling", true);
         }
     }
 
@@ -110,7 +116,7 @@ public class EnemyAIController : MonoBehaviour
         agent.isStopped = true;
         detection.HandleDetection(); // Adjusted to use detection properly
 
-        if (detection.IsPlayerDetected)
+        if (detection.IsPlayerDetected && !alerted)
         {
             SetState(EnemyState.Alerted);
         }
@@ -122,13 +128,20 @@ public class EnemyAIController : MonoBehaviour
 
     void Alerted()
     {
+        Debug.Log("Alerted");
+        alerted = true;
+        animator.SetBool("isAlerted", true);
         alertSystem.AlertNearbyEnemies();
-        agent.SetDestination(detection.lastKnownPlayerPosition);
+        animator.SetBool("isIdling", false);
+        animator.SetBool("isPatrolling", false);
         SetState(EnemyState.Chasing);
     }
 
     void ChasePlayer()
     {
+        Debug.Log("Chasing");
+        animator.SetBool("isAlerted", false);
+        animator.SetBool("isChasing", true);
         if (detection.IsPlayerDetected)
         {
             agent.SetDestination(detection.lastKnownPlayerPosition);
@@ -149,10 +162,15 @@ public class EnemyAIController : MonoBehaviour
             }
 
             SetState(EnemyState.Patrolling);
+            animator.SetBool("isChasing", false);
         }
         else
         {
             agent.SetDestination(patrolPoints[currentPatrolIndex].position);
+            animator.SetBool("isIdling", false);
+            animator.SetBool("isPatrolling", true);
+            animator.SetBool("isChasing", false);
+            alerted = false;
         }
     }
 

@@ -71,8 +71,13 @@ public class EnemyDetection : MonoBehaviour
 
         if (IsPlayerDetected)
         {
-            enemyAI.SetState(EnemyAIController.EnemyState.Alerted);
-            lastKnownPlayerPosition = player.position;
+            if(enemyAI.alerted){
+                enemyAI.SetState(EnemyAIController.EnemyState.Chasing);
+                lastKnownPlayerPosition = player.position;
+            }else{
+                enemyAI.SetState(EnemyAIController.EnemyState.Alerted);
+                lastKnownPlayerPosition = player.position;
+            }
         }
         else
         {

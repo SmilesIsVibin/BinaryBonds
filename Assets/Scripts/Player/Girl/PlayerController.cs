@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float ySpeed;
     public float originalStepOffset;
     public float coyoteTime;
+    public float fallTime;
     private float? lastGroundTime;
     private float? jumpPressedTime;
 
@@ -104,7 +105,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isGrounded", false);
                 isGrounded = false;
 
-                if ((isJumping && ySpeed < 0) || ySpeed < -2.5f)
+                if ((isJumping && ySpeed < 0) || ySpeed < fallTime)
                 {
                     animator.SetBool("isFalling", true);
                 }
@@ -137,6 +138,8 @@ public class PlayerController : MonoBehaviour
                 ySpeed = -0.5f;
                 animator.SetBool("isGrounded", true);
                 isGrounded = true;
+                animator.SetBool("isJumping", false);
+                isJumping = false;
                 animator.SetBool("isFalling", false);
             }
             else
@@ -145,7 +148,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isGrounded", false);
                 isGrounded = false;
 
-                if ((ySpeed < 0) || ySpeed < -2.5f)
+                if (ySpeed < fallTime)
                 {
                     animator.SetBool("isFalling", true);
                 }

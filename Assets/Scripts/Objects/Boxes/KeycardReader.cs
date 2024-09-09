@@ -37,7 +37,9 @@ public class KeycardReader : MonoBehaviour
         if(other.CompareTag("Player")){
             CheckForKeycard();
             if(canActivate && Input.GetKeyDown(KeyCode.E)){
-
+                gate.SetActive(false);
+                interactionPrompt.SetActive(false);
+                this.enabled = false;
             }
         }
     }
@@ -46,7 +48,9 @@ public class KeycardReader : MonoBehaviour
         if(other.CompareTag("Player")){
             CheckForKeycard();
             if(canActivate && Input.GetKeyDown(KeyCode.E)){
-
+                gate.SetActive(false);
+                interactionPrompt.SetActive(false);
+                Destroy(this);
             }
         }
     }
@@ -54,6 +58,7 @@ public class KeycardReader : MonoBehaviour
     private void OnTriggerExit(Collider other){
         if(other.CompareTag("Player")){
             interactionPrompt.SetActive(false);
+            canActivate = false;
         }
     }
 }

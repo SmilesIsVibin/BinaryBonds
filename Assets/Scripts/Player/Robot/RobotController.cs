@@ -10,12 +10,14 @@ public class RobotController : MonoBehaviour
     public float maxSpeed;
     public float walkSpeed;
     public float sprintSpeed;
+    public float grabSpeed;
     public bool isSprinting;
 
     public float jumpSpeed;
     public float ySpeed;
     public float originalStepOffset;
     public float coyoteTime;
+    public float fallTime;
     private float? lastGroundTime;
     private float? jumpPressedTime;
 
@@ -74,6 +76,8 @@ public class RobotController : MonoBehaviour
                     ySpeed = -0.5f;
                     animator.SetBool("isGrounded", true);
                     isGrounded = true;
+                    animator.SetBool("isJumping", false);
+                    isJumping = false;
                     animator.SetBool("isFalling", false);
                 }
                 else
@@ -81,7 +85,7 @@ public class RobotController : MonoBehaviour
                     characterController.stepOffset = 0f;
                     animator.SetBool("isGrounded", false);
                     isGrounded = false;
-                    if ((ySpeed < 0) || ySpeed < -2.5f)
+                    if (ySpeed < fallTime)
                     {
                         animator.SetBool("isFalling", true);
                     }
@@ -115,7 +119,7 @@ public class RobotController : MonoBehaviour
                     animator.SetBool("isGrounded", false);
                     isGrounded = false;
 
-                    if ((ySpeed < 0) || ySpeed < -2.5f)
+                    if (ySpeed < -2.5f)
                     {
                         animator.SetBool("isFalling", true);
                     }
@@ -216,7 +220,7 @@ public class RobotController : MonoBehaviour
                 animator.SetBool("isGrounded", false);
                 isGrounded = false;
 
-                if ((isJumping && ySpeed < 0) || ySpeed < -2.5f)
+                if ((isJumping && ySpeed < 0) || ySpeed < fallTime)
                 {
                     animator.SetBool("isFalling", true);
                 }
@@ -233,23 +237,23 @@ public class RobotController : MonoBehaviour
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, rotationSpeed * Time.deltaTime);
             }
     }
+    private void HandleInteractionMovement()
+    {
+        // Restrict player movement to forward, backward, left, right only
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-private void HandleInteractionMovement()
-{
-    // Restrict player movement to forward, backward, left, right only
-    float horizontal = Input.GetAxisRaw("Horizontal");
-    float vertical = Input.GetAxisRaw("Vertical");
+        // Get the player's current facing direction
+        Vector3 forward = transform.forward;
+        Vector3 right = transform.right;
 
-    // Get the player's current facing direction
-    Vector3 forward = transform.forward;
-    Vector3 right = transform.right;
+        // Calculate movement direction relative to the player's facing direction
+        maxSpeed = grabSpeed;
+        Vector3 movementDirection = (horizontal * right + vertical * forward).normalized;
+        float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
+        float speed = inputMagnitude * maxSpeed;
 
-    // Calculate movement direction relative to the player's facing direction
-    Vector3 movementDirection = (horizontal * right + vertical * forward).normalized;
-    float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
-    float speed = inputMagnitude * maxSpeed;
-
-    ySpeed += Physics.gravity.y * Time.deltaTime;
+        ySpeed += Physics.gravity.y * Time.deltaTime;
 
         if (characterController.isGrounded)
         {
@@ -269,17 +273,32 @@ private void HandleInteractionMovement()
                 animator.SetBool("isGrounded", false);
                 isGrounded = false;
 
-                if ((isJumping && ySpeed < 0) || ySpeed < -2.5f)
+                if ((isJumping && ySpeed < 0) || ySpeed < fallTime)
                 {
                     animator.SetBool("isFalling", true);
                 }
             }
-    Vector3 velocity = movementDirection * speed;
+        Vector3 velocity = movementDirection * speed;
 
-    // Move the player only in XZ plane without rotation or jumping
-    velocity.y = ySpeed; // Apply gravity
-    characterController.Move(velocity * Time.deltaTime);
-    animator.SetFloat("InputMagnitude", speed, 0.05f, Time.deltaTime);
-}
+        // Move the player only in XZ plane without rotation or jumping
+        velocity.y = ySpeed; // Apply gravity
+        characterController.Move(velocity * Time.deltaTime);
+        if(Input.GetKey(KeyCode.S)){
+            animator.SetFloat("GrabMagnitude", -speed, 0.05f, Time.deltaTime);
+        }else{
+            animator.SetFloat("GrabMagnitude", speed, 0.05f, Time.deltaTime);
+        }
+    }
 
+    public void GrabBox()
+    {
+        isInteracting = true;
+        animator.SetBool("isGrabbing", true);
+    }
+
+    public void ReleaseBox()
+    {
+        isInteracting = false;
+        animator.SetBool("isGrabbing", false);
+    }
 }
