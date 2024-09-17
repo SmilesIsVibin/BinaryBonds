@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class LeverManager : MonoBehaviour
 {
     public GameObject gate; // The gate or door to be unlocked
     public Lever[] levers; // Array of all levers this manager handles
     public bool[] correctCombination; // The correct combination for the gate to unlock
+    public PlayableDirector gateOpen;
 
     void Start()
     {
@@ -29,7 +31,14 @@ public class LeverManager : MonoBehaviour
         }
 
         // If all lever states match the correct combination, open the gate
-        gate.SetActive(false);
+        if(gateOpen != null){
+            gateOpen.Play();
+            foreach(Lever l in levers){
+                l.enabled = false;
+            }
+        }else{
+            gate.SetActive(false);
+        }
     }
 
     public void LeverToggled(Lever toggledLever)

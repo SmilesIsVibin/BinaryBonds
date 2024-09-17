@@ -12,6 +12,10 @@ public class Lever : MonoBehaviour
 
     private bool playerInRange = false;
 
+    private void Start(){
+        interactionPrompt.gameObject.SetActive(false);
+    }
+
     void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))

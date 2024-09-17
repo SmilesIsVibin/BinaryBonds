@@ -12,12 +12,15 @@ public class GameManager : MonoBehaviour
 
     [Header("UI Elements")]
     [SerializeField] public GameObject pauseMenu;
-    [SerializeField] public GameObject settingsMenu;
+    [SerializeField] public GameObject restartConfirmation;
+    [SerializeField] public GameObject homeConfirmation;
     [SerializeField] public AudioSource audioSource;
     [SerializeField] public GameObject winLevelPanel;
     private bool isPaused;
 
     [Header("Settings")]
+    [SerializeField] public GameObject objectivesPage;
+    [SerializeField] public GameObject settingsPage;
     [SerializeField] public GameObject audioMenu;
     [SerializeField] public GameObject graphicsMenu;
     [SerializeField] public GameObject aboutMenu;
@@ -48,7 +51,8 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         pauseMenu.SetActive(false);
-        settingsMenu.SetActive(false);
+        objectivesPage.SetActive(true);
+        settingsPage.SetActive(false);
         winLevelPanel.SetActive(false);
         Time.timeScale = 1f;
         SetUpVolumeLevels();
@@ -76,27 +80,43 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
-        settingsMenu.SetActive(false);
+        objectivesPage.SetActive(true);
+        settingsPage.SetActive(false);
         audioSource.Pause();
         Cursor.lockState = CursorLockMode.None;
     }
 
     public void OpenSettingsMenu()
     {
-        pauseMenu.SetActive(false);
-        settingsMenu.SetActive(true);
+        objectivesPage.SetActive(false);
+        settingsPage.SetActive(true);
     }
 
     public void CloseSettingsMenu()
     {
-        pauseMenu.SetActive(true);
-        settingsMenu.SetActive(false);
+        objectivesPage.SetActive(true);
+        settingsPage.SetActive(false);
     }
 
+    public void ConfirmRestart(){
+        restartConfirmation.SetActive(true);
+    }
+
+    public void DeclineRestart(){
+        restartConfirmation.SetActive(false);
+    }
     public void RestartGame()
     {
         Time.timeScale = 1f;
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ConfirmReturnToHome(){
+        homeConfirmation.SetActive(true);
+    }
+
+    public void DeclineReturnToHome(){
+        homeConfirmation.SetActive(false);
     }
 
     public void ReturnToMenu()
@@ -109,7 +129,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
-        settingsMenu.SetActive(false);
+        objectivesPage.SetActive(false);
+        settingsPage.SetActive(false);
         audioSource.UnPause();
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
