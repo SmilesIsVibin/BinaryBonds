@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Animations;
 
 public class KeycardReader : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class KeycardReader : MonoBehaviour
     public string requiredKeycard;
     public TMP_Text interactionText;
     public bool canActivate;
+    private Animator doorAnimator;
 
     void Start(){
         interactionPrompt.SetActive(false);
+        doorAnimator = gate.GetComponent<Animator>();
     }
 
     private void CheckForKeycard(){
@@ -37,7 +40,7 @@ public class KeycardReader : MonoBehaviour
         if(other.CompareTag("Player")){
             CheckForKeycard();
             if(canActivate && Input.GetKeyDown(KeyCode.E)){
-                gate.SetActive(false);
+                doorAnimator.SetTrigger("Swing");
                 interactionPrompt.SetActive(false);
                 this.enabled = false;
             }
@@ -48,7 +51,7 @@ public class KeycardReader : MonoBehaviour
         if(other.CompareTag("Player")){
             CheckForKeycard();
             if(canActivate && Input.GetKeyDown(KeyCode.E)){
-                gate.SetActive(false);
+                doorAnimator.SetTrigger("Swing");
                 interactionPrompt.SetActive(false);
                 Destroy(this);
             }
