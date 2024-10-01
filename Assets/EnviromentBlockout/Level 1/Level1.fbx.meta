@@ -7,233 +7,273 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Arms
-    second: {fileID: 2100000, guid: 9cf62acd9d5f60e4da23098b7490b0d1, type: 2}
+      name: Bear
+    second: {fileID: 2100000, guid: d6d35b3fe9b1f574a99d5974fb3840d9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bangs
-    second: {fileID: 2100000, guid: e8b44a286a64ed04c8d7d5fdb05896dc, type: 2}
+      name: Bear.001
+    second: {fileID: 2100000, guid: cb663fdcffe1a974f951ea3aed190ef4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book
+    second: {fileID: 2100000, guid: 70645c0c113fddf4c8ac99d856b349de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book.001
+    second: {fileID: 2100000, guid: b0594132e8b106349a999b39be318d60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book.002
+    second: {fileID: 2100000, guid: 7e1368efbd05551428c6a0ad7bda0c29, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Box
-    second: {fileID: 2100000, guid: 7cdd71ec75282134ab9fd80d3dc947bf, type: 2}
+    second: {fileID: 2100000, guid: f49b015376420cd40ae97e7a22b82e5b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Box.001
-    second: {fileID: 2100000, guid: f240d9e8c34a9284a802833ec88a5fc6, type: 2}
+    second: {fileID: 2100000, guid: c6ab043f0e5462d44ab17d7b251e8240, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Box.002
-    second: {fileID: 2100000, guid: 01def22df33259b48af33a8dea6b00ec, type: 2}
+    second: {fileID: 2100000, guid: 005f22eb1f097bc46b5efd1bdf2d5cfe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Cabinet
-    second: {fileID: 2100000, guid: de740fa94d43c03479664c7f247c9d57, type: 2}
+    second: {fileID: 2100000, guid: ed7ec59a06576a5449cf1eb7ba7b3a88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinet.001
+    second: {fileID: 2100000, guid: 5a356e279f846f446af344139094d399, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Cave
-    second: {fileID: 2100000, guid: 810f64e6a518a9b4e94079d16b4f4045, type: 2}
+    second: {fileID: 2100000, guid: 957115590ff389641be89cc9a56eebd9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Cloth1
-    second: {fileID: 2100000, guid: ac1c33c9b6f84554ebc7046760a00693, type: 2}
+    second: {fileID: 2100000, guid: e0c460fd31e2eb241852f010d9cd10a1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Cloth1.001
-    second: {fileID: 2100000, guid: 8aee06c67ef7741429303e2832d3f693, type: 2}
+    second: {fileID: 2100000, guid: ece213c20e8fa1e4fbd89169bfc18ffd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cone
+    second: {fileID: 2100000, guid: 80dacc1f586cae0478de8dc36940cd0d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Desk
-    second: {fileID: 2100000, guid: 3693221917b6f2b40a42823582c68c00, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Foot
-    second: {fileID: 2100000, guid: dd22e4271805fc7418ec093b4f58d3b2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hair
-    second: {fileID: 2100000, guid: e609ae8afb29a2f479652e227d3cf864, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: HeadBody
-    second: {fileID: 2100000, guid: 054fcf050f621ce4f94fbfc8a8ecf938, type: 2}
+    second: {fileID: 2100000, guid: 467a55ff826adbd4184207fffc4f72ec, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Lamp
-    second: {fileID: 2100000, guid: ef26356eb7c8bf248b3426240e53b6d3, type: 2}
+    second: {fileID: 2100000, guid: 2ba827996a05f8e40999eb400ad1f128, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Light
-    second: {fileID: 2100000, guid: 501ddb4ebb98e714d9c38cc4b01815b9, type: 2}
+    second: {fileID: 2100000, guid: 055c54ed020d01941b5ac5ced59dee9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Map1
+    second: {fileID: 2100000, guid: f64c3241b77abae4484287fd7950c2f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Map1.001
+    second: {fileID: 2100000, guid: fe3a7e84909dab547ba13ab52e86332a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material
-    second: {fileID: 2100000, guid: b4c4935505db80c4eb724fe1a53ab1b1, type: 2}
+    second: {fileID: 2100000, guid: 788a92104c757614d98ffe91788fd211, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 32eca4d178919a04c844d4d34854024a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Paper
-    second: {fileID: 2100000, guid: e5ae6e5925da63148adc433521f5036f, type: 2}
+    second: {fileID: 2100000, guid: 1bef25693d9e57347991468b53b0389f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Paper.001
-    second: {fileID: 2100000, guid: 2fd988175c2572a44adf9f38884eb812, type: 2}
+    second: {fileID: 2100000, guid: 78e6b65579910964db626a045f225c8b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Rock
-    second: {fileID: 2100000, guid: fda9c03361d4f3e4b83dfb81f4d7ce37, type: 2}
+    second: {fileID: 2100000, guid: 57df1726c2ff9974498fd3b5fe395d17, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Rock.001
-    second: {fileID: 2100000, guid: 1566fbb098c0a4849a555e73afe10a09, type: 2}
+    second: {fileID: 2100000, guid: 4c9155cdee365ab448840f46574df10f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Rope1
-    second: {fileID: 2100000, guid: 82452febde4a6274e8b28305b2911027, type: 2}
+    second: {fileID: 2100000, guid: 234d5278f59ed3f4bb2d7bf68541a2be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rope1.002
+    second: {fileID: 2100000, guid: 6a503d0b151ac6848afdc30a524909ca, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Rope2
-    second: {fileID: 2100000, guid: 7d34e4ccb29317243bff34941c523283, type: 2}
+    second: {fileID: 2100000, guid: c0ba4cfcdb13f13418e2f7570093ca12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rope2.002
+    second: {fileID: 2100000, guid: dbb054fc2d1f9784a91c947e8f312ff6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Rope3
-    second: {fileID: 2100000, guid: 4920a9fed79a2e346bb91c4a2134a5fd, type: 2}
+    second: {fileID: 2100000, guid: a41e82611a7b8fb4e9cf6d732ccf8b93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rope3.002
+    second: {fileID: 2100000, guid: 1575a1ec928492d4aa142d1b78296418, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Sheet
-    second: {fileID: 2100000, guid: bb4202edadb576c4c97d332310b707db, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Shorts
-    second: {fileID: 2100000, guid: ce97dcf5ac73d1e4a8a300b7a03d9f88, type: 2}
+    second: {fileID: 2100000, guid: b9a9dccd60602cc418c7bcf2dc9581b5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Stone
-    second: {fileID: 2100000, guid: aa3ca07123af0ae4994e77e4dd74bc77, type: 2}
+    second: {fileID: 2100000, guid: a7f7166db67e49d459b8bef63f503810, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Tshirt
-    second: {fileID: 2100000, guid: ed9e30fe5aa118640b718a3949ed97ee, type: 2}
+      name: Whiteboard
+    second: {fileID: 2100000, guid: 88f5922204643aa4eb1c7f8893b032d4, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: Arms Base Color
-    second: {fileID: 2800000, guid: 6e11ca5aa28121b43a044ee37920bfe4, type: 3}
+      name: Bear
+    second: {fileID: 2800000, guid: 5b6173579b3806a47b2a8d68ea677d3a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: Bangs Base Color
-    second: {fileID: 2800000, guid: 0c449be341b6a9b40bae80177e1387c8, type: 3}
+      name: Book1
+    second: {fileID: 2800000, guid: fd0beb24463289e4c83632e200d98e33, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Book2
+    second: {fileID: 2800000, guid: 4dd7c13922f6d6e47bd56352c2f35439, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Book3
+    second: {fileID: 2800000, guid: d286bc812dc9b55409dd729a5b6eb904, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Box
-    second: {fileID: 2800000, guid: a5cab31805be22a45ae1f2eff6de0ac3, type: 3}
+    second: {fileID: 2800000, guid: 5b718783aabfdb845a2446adad7e4713, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Cabinet1
-    second: {fileID: 2800000, guid: 42c2267054ff54941a571096d8c31d0d, type: 3}
+    second: {fileID: 2800000, guid: 662b1e9c51b3cf242a85af25667b2351, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cabinet2
+    second: {fileID: 2800000, guid: eb43e05d47857734582d3c2e304efb05, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Cardboard
-    second: {fileID: 2800000, guid: 5b39c3fa915d988479a3b431ebcec6ee, type: 3}
+    second: {fileID: 2800000, guid: 8ea9a6a09569f4d4782b2a687897b1a9, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Cloth1
-    second: {fileID: 2800000, guid: 6612f5219004bab4a846e5011ee0c42e, type: 3}
+    second: {fileID: 2800000, guid: efa8cba5f7735af408660653528071c8, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Cloth3
-    second: {fileID: 2800000, guid: a8b889813da0b8043a70945159506c36, type: 3}
+    second: {fileID: 2800000, guid: ff13774c2f149524ba26beee3de0cadb, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Desk
-    second: {fileID: 2800000, guid: 489ce7cb34fca2c4b975d252e4e2e190, type: 3}
+    second: {fileID: 2800000, guid: 9cad174b39599704bb2c500dc6b67db6, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: Foot Base Color
-    second: {fileID: 2800000, guid: 8298dd44286e07f40b204605f9f9a50b, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Hair Base Color
-    second: {fileID: 2800000, guid: 6cabd36abe116a84facc1a86fffdd9d8, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: HeadBody Base Color
-    second: {fileID: 2800000, guid: 22804ab4b716bcb40a5e8e3b85e5cfe0, type: 3}
+      name: Doll2
+    second: {fileID: 2800000, guid: 6d7065a49f90df04cb4478c64b98d23e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Lamp1
-    second: {fileID: 2800000, guid: 2f9cffc2e17866440bc57a8c62179468, type: 3}
+    second: {fileID: 2800000, guid: c3297c5f3e204ad4e8612a394f5f3902, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Map2
+    second: {fileID: 2800000, guid: 18842b00c48aa5042aa5b937e3a16de9, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Paper1 (Drawing)
-    second: {fileID: 2800000, guid: bab6fd782028fd949b52a25cf6187c26, type: 3}
+    second: {fileID: 2800000, guid: a00534a91e8662f48abd2532fb3a7002, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Paper1 (Writing)
-    second: {fileID: 2800000, guid: 1216e33d617f0084facd25bedbe476d7, type: 3}
+    second: {fileID: 2800000, guid: fb5190bc78677f440a4c2ac9c4da9b45, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Rock1
-    second: {fileID: 2800000, guid: 11051789199eaee428d719b71d87cfda, type: 3}
+    second: {fileID: 2800000, guid: fccf780115a0d934298cde903914223a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Sheet
-    second: {fileID: 2800000, guid: 4abac92c766c45f4aba1e44457b1172a, type: 3}
+    second: {fileID: 2800000, guid: 342e45d498030d14b8676b3ada51a32b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: Shorts Base Color
-    second: {fileID: 2800000, guid: f87a51fd5d8419844bf4c6b373bf7160, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Tshirt Base Color
-    second: {fileID: 2800000, guid: 7abc3c96a10c9a2478db885cc2043b71, type: 3}
+      name: Whiteboard(clean)
+    second: {fileID: 2800000, guid: 351e5d5e754ddfb40b10dc98405547bc, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -262,7 +302,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1

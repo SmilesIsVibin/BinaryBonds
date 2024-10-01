@@ -13,7 +13,9 @@ public class ObjectiveItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if ((other.CompareTag("Player") && other.gameObject.GetComponent<SoloPlayerController>().isActive) || 
+        (other.CompareTag("Player") && other.gameObject.GetComponent<GirlController>().isActive) ||
+        (other.CompareTag("Player") && other.gameObject.GetComponent<RobotController>().isActive))
         {
             interactionPopup.SetActive(true);
         }

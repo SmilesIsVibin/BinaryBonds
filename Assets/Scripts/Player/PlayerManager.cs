@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     public bool isActive;
 
     [Header("Players")]
-    public PlayerController girlPlayer;
+    public GirlController girlPlayer;
     public RobotController robotPlayer;
     public RobotFollow robotFollow;
     public GameObject girlIconActive;

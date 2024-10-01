@@ -8,6 +8,7 @@ public class ObjectivesManager : MonoBehaviour
     public static ObjectivesManager Instance;
 
     [Header("UI Elements")]
+    public Animator canvasAnimator;
     public TextMeshProUGUI objectiveTitleText;
     public TextMeshProUGUI objectiveDescriptionText;
     public TextMeshProUGUI objectiveStatusText;
@@ -151,11 +152,11 @@ public class ObjectivesManager : MonoBehaviour
         {
             isNotificationActive = true;
             notificationText.text = notificationQueue.Dequeue();
-            notificationText.gameObject.SetActive(true);
+            canvasAnimator.SetTrigger("OpenNotification");
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(6f);
 
-            notificationText.gameObject.SetActive(false);
+            Debug.Log("Notification Closing");
         }
         isNotificationActive = false;
     }

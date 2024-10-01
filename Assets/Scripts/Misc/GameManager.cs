@@ -29,24 +29,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Slider sfxVolumeSlider;
     [SerializeField] public AudioMixer audioMixer;
 
-    /*
-    [Header("Dev Panel")]
-    [SerializeField] public GameObject debugPanel;
-    [Header("Elara Debug Panel")]
-    [SerializeField] public GameObject elaraDebugPanel;*/
-    [SerializeField] public PlayerController elaraController;
-    /*
-    [SerializeField] public TMP_InputField elaraSprintSpeed;
-    [SerializeField] public TMP_InputField elaraJumpHeight;
-
-    [Header("Happy Debug Panel")]
-    [SerializeField] public GameObject happyDebugPanel;*/
-    [SerializeField] public RobotController happyController;
-    /*
-    [SerializeField] public TMP_InputField happySprintSpeed;
-    [SerializeField] public TMP_InputField happyJumpHeight;
-    */
-
     void Start()
     {
         Instance = this;
@@ -213,7 +195,6 @@ public class GameManager : MonoBehaviour
             SetSFXVolume();
         }
     }
-
     public void ViewAudioSettings()
     {
         audioMenu.SetActive(true);
@@ -234,84 +215,16 @@ public class GameManager : MonoBehaviour
         graphicsMenu.SetActive(false);
         aboutMenu.SetActive(true);
     }
-
-        /*
-    public void OpenDebugTools()
-    {
-        pauseMenu.SetActive(false);
-        settingsMenu.SetActive(false);
-        debugPanel.SetActive(true);
-    }
-    private void SetupDebugPanel()
-    {
-        if(happyController != null)
-        {
-            elaraDebugPanel.SetActive(true);
-            elaraSprintSpeed.text = elaraController.sprintSpeed.ToString();
-            elaraJumpHeight.text = elaraController.jumpSpeed.ToString();
-
-            happyDebugPanel.SetActive(true);
-            happySprintSpeed.text = happyController.sprintSpeed.ToString();
-            happyJumpHeight.text = happyController.jumpSpeed.ToString();
-        }
-        else
-        {
-            elaraDebugPanel.SetActive(true);
-            elaraSprintSpeed.text = elaraController.sprintSpeed.ToString();
-            elaraJumpHeight.text = elaraController.jumpSpeed.ToString();
-
-            happyDebugPanel.SetActive(false);
-        }
-    }
-
-    public void AddCharacterSprintSpeed(int target)
-    {
-        switch (target)
-        {
-            case 0:
-                elaraController.sprintSpeed = int.Parse(elaraSprintSpeed.text);
-                break;
-            case 1:
-                happyController.sprintSpeed = int.Parse(happySprintSpeed.text);
-                break;
-            default:
-                elaraController.sprintSpeed = int.Parse(elaraSprintSpeed.text);
-                break;
-        }
-    }
-
-    public void AddCharacterJumpForce(int target)
-    {
-        switch (target)
-        {
-            case 0:
-                elaraController.jumpSpeed = int.Parse(elaraJumpHeight.text);
-                break;
-            case 1:
-                happyController.jumpSpeed = int.Parse(happyJumpHeight.text);
-                break;
-            default:
-                elaraController.jumpSpeed = int.Parse(happyJumpHeight.text);
-                break;
-        }
-    }
-    */
-
     public void WinLevel()
     {
-        if(happyController != null)
-        {
-            elaraController.isActive = false;
-            happyController.isActive = false;
-            audioSource.Pause();
-            winLevelPanel.SetActive(true);
-        }
-        else
-        {
-            elaraController.isActive = false;
-            audioSource.Pause();
-            winLevelPanel.SetActive(true);
-        }
+        audioSource.Pause();
+        Time.timeScale = 0f;
+        winLevelPanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void NextLevel(){
+        Time.timeScale = 1f;
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
