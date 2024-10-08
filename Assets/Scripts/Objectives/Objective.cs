@@ -26,6 +26,7 @@ public class Objective
 
     // For Explore objectives
     public string areaName;
+    public Transform markerLocation;
 
     // For Timed objectives
     public float timeLimit;

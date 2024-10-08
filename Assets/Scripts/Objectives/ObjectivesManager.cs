@@ -14,6 +14,7 @@ public class ObjectivesManager : MonoBehaviour
     public TextMeshProUGUI objectiveStatusText;
     public TextMeshProUGUI notificationText;
     public TextMeshProUGUI timerText;
+    public ObjectiveMarker objectiveMarker;
 
     [Header("Objectives Data")]
     public List<Objective> allObjectives;
@@ -32,17 +33,6 @@ public class ObjectivesManager : MonoBehaviour
         if (allObjectives.Count > 0)
         {
             SetObjective(0); // Start with the first objective in the list
-            StartCoroutine(ShowInitialNotification(5f)); // Show the initial notification with a delay
-        }
-    }
-
-    private IEnumerator ShowInitialNotification(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        if (currentObjectiveIndex >= 0 && currentObjectiveIndex < allObjectives.Count)
-        {
-            Objective objective = allObjectives[currentObjectiveIndex];
-            QueueNotification("New Objective: " + objective.description);
         }
     }
 
@@ -68,7 +58,7 @@ public class ObjectivesManager : MonoBehaviour
             Objective objective = allObjectives[currentObjectiveIndex];
             if (!objective.isCompleted)
             {
-                QueueNotification("New Objective: " + objective.description);
+                QueueNotification("Objective: " + objective.description);
 
                 if (objective.type == Objective.ObjectiveType.Timed)
                 {
@@ -89,6 +79,7 @@ public class ObjectivesManager : MonoBehaviour
 
     public void CompleteObjective()
     {
+        objectiveMarker.DisableTracking();
         if (currentObjectiveIndex < 0 || currentObjectiveIndex >= allObjectives.Count)
             return;
 
@@ -155,7 +146,8 @@ public class ObjectivesManager : MonoBehaviour
             canvasAnimator.SetTrigger("OpenNotification");
 
             yield return new WaitForSeconds(6f);
-
+            objectiveMarker.target = allObjectives[currentObjectiveIndex].markerLocation;
+            objectiveMarker.EnableTracking();
             Debug.Log("Notification Closing");
         }
         isNotificationActive = false;
