@@ -12,6 +12,8 @@ public class Menu : MonoBehaviour
     [SerializeField] public GameObject mainMenu;
     [SerializeField] public GameObject levelSelectMenu;
     [SerializeField] public GameObject settingsMenu;
+    [SerializeField] public SceneTransitions sceneTransitions;
+    [SerializeField] public float sceneOffset;
 
     [Header("Audio Settings")]
     [SerializeField] public GameObject audioMenu;
@@ -64,6 +66,12 @@ public class Menu : MonoBehaviour
 
     public void GoToLevelScene()
     {
+        StartCoroutine(nameof(StartLevelScene));
+    }
+
+    IEnumerator StartLevelScene(){
+        sceneTransitions.CloseTransition();
+        yield return new WaitForSeconds(sceneOffset);
         SceneManager.LoadSceneAsync(selectedLevel.levelIndexName);
     }
 

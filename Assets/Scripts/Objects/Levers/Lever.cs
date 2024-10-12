@@ -6,14 +6,14 @@ public class Lever : MonoBehaviour
 {
     public bool isOn = false; // Current state of this lever
     public LeverManager leverManager; // Reference to the Lever Manager
-    public TMP_Text interactionPrompt; // Interaction UI prompt
+    public GameObject interactionPrompt; // Interaction UI prompt
     public Lever[] adjacentLevers; // Adjacent levers that will be affected
     public GameObject handle;
 
     private bool playerInRange = false;
 
     private void Start(){
-        interactionPrompt.gameObject.SetActive(false);
+        interactionPrompt.SetActive(false);
     }
 
     void Update()
@@ -39,7 +39,7 @@ public class Lever : MonoBehaviour
         leverManager.LeverToggled();
 
         // Hide the interaction prompt briefly after interacting
-        interactionPrompt.gameObject.SetActive(false);
+        interactionPrompt.SetActive(false);
         Invoke(nameof(ShowPromptIfStillInRange), 3f);
     }
 
@@ -66,7 +66,7 @@ public class Lever : MonoBehaviour
     {
         if (playerInRange)
         {
-            interactionPrompt.gameObject.SetActive(true);
+            interactionPrompt.SetActive(true);
         }
     }
 
@@ -75,7 +75,7 @@ public class Lever : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Player_Elara") || other.CompareTag("Player_Happy"))
         {
             playerInRange = true;
-            interactionPrompt.gameObject.SetActive(true);
+            interactionPrompt.SetActive(true);
         }
     }
 
@@ -84,7 +84,7 @@ public class Lever : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Player_Elara") || other.CompareTag("Player_Happy"))
         {
             playerInRange = false;
-            interactionPrompt.gameObject.SetActive(false);
+            interactionPrompt.SetActive(false);
         }
     }
 }

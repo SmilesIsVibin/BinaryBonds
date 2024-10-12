@@ -12,6 +12,8 @@ public class PlayerManager : MonoBehaviour
     public bool isActive;
 
     [Header("Players")]
+    public bool soloMode;
+    public SoloPlayerController playerController;
     public GirlController girlPlayer;
     public RobotController robotPlayer;
     public RobotFollow robotFollow;
@@ -23,7 +25,10 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SwitchPlayerCameras(0);
+        Instance = this;
+        if(!soloMode){
+            SwitchPlayerCameras(0);
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +36,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (isActive)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (!soloMode && Input.GetKeyDown(KeyCode.R))
             {
                 if (girlPlayer.isActive)
                 {
@@ -87,8 +92,18 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void PlayerDeath()
+    public void PlayerGameOver()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        isActive = false;
+        if(soloMode){
+            playerController.isActive = false;
+            playerController.gameObject.SetActive(false);
+        }else{
+            girlPlayer.isActive = false;
+            robotPlayer.isActive = false;
+            girlPlayer.gameObject.SetActive(false);
+            robotPlayer.gameObject.SetActive(false);
+        }
+        GameManager.Instance.GameOverLevel();
     }
 }

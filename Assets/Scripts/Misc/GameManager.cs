@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject homeConfirmation;
     [SerializeField] public AudioSource audioSource;
     [SerializeField] public GameObject winLevelPanel;
+    [SerializeField] public GameObject gameOverPanel;
+    [SerializeField] public SceneTransitions sceneTransitions;
+    [SerializeField] public float sceneOffset;
+    private bool gameStarted;
     private bool isPaused;
 
     [Header("Settings")]
@@ -36,14 +40,17 @@ public class GameManager : MonoBehaviour
         objectivesPage.SetActive(true);
         settingsPage.SetActive(false);
         winLevelPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
         Time.timeScale = 1f;
         SetUpVolumeLevels();
         isPaused = false;
+        StartCoroutine(nameof(GameBegin));
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if(gameStarted){
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
             {
@@ -55,6 +62,7 @@ public class GameManager : MonoBehaviour
                 OpenPauseMenu();
                 isPaused = true;
             }
+        }
         }
     }
 
@@ -90,6 +98,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
+        StartCoroutine(nameof(CloseSceneTransition));
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -104,6 +113,7 @@ public class GameManager : MonoBehaviour
     public void ReturnToMenu()
     {
         Time.timeScale = 1f;
+        StartCoroutine(nameof(CloseSceneTransition));
         SceneManager.LoadSceneAsync("MenuScene");
     }
 
@@ -225,6 +235,23 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel(){
         Time.timeScale = 1f;
+        StartCoroutine(nameof(CloseSceneTransition));
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void GameOverLevel(){
+        Time.timeScale = 0f;
+        gameOverPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    IEnumerator GameBegin(){
+        yield return new WaitForSeconds(2f);
+        gameStarted = true;
+    }
+
+    IEnumerator CloseSceneTransition(){
+        sceneTransitions.CloseTransition();
+        yield return new WaitForSeconds(sceneOffset);
     }
 }

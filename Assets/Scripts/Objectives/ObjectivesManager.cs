@@ -145,7 +145,7 @@ public class ObjectivesManager : MonoBehaviour
             notificationText.text = notificationQueue.Dequeue();
             canvasAnimator.SetTrigger("OpenNotification");
 
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(2f);
             objectiveMarker.target = allObjectives[currentObjectiveIndex].markerLocation;
             objectiveMarker.EnableTracking();
             Debug.Log("Notification Closing");

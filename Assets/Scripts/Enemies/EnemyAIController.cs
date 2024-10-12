@@ -202,4 +202,10 @@ public class EnemyAIController : MonoBehaviour
                 break;
         }
     }
+
+    private void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Player_Elara")){
+            PlayerManager.Instance.PlayerGameOver();
+        }
+    }
 }
