@@ -11,6 +11,7 @@ TagManager:
   - Obstacle
   - Walls
   - PushableBox
+  - BossArm
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Walls
   - Enemy
   - See-Through
-  - 
+  - Boss
   - 
   - 
   - 

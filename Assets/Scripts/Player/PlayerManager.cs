@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Players")]
     public bool soloMode;
+    public bool soloRobot;
     public SoloPlayerController playerController;
     public GirlController girlPlayer;
     public RobotController robotPlayer;
@@ -96,9 +97,15 @@ public class PlayerManager : MonoBehaviour
     {
         isActive = false;
         if(soloMode){
-            playerController.isActive = false;
-            playerController.gameObject.SetActive(false);
-        }else{
+            if(soloRobot){
+                robotPlayer.isActive = false;
+                robotPlayer.gameObject.SetActive(false);
+            }else{
+                playerController.isActive = false;
+                playerController.gameObject.SetActive(false);
+            }
+        }
+        else{
             girlPlayer.isActive = false;
             robotPlayer.isActive = false;
             girlPlayer.gameObject.SetActive(false);

@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: f1b3344f0eeb30e4a9cfa740ea1d442a, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: bfc5eeafff589f3428c2a3783a3f8dc3, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: ff66896a85c19f84fb3093339476ebb9, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1219,7 +1219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec760a2db3c0644a830a04896c9f0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  charReq: 1
+  currentChars: 0
 --- !u!65 &379478159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3547,6 +3548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   soloMode: 1
+  soloRobot: 0
   playerController: {fileID: 799826298878739688}
   girlPlayer: {fileID: 0}
   robotPlayer: {fileID: 0}
@@ -24541,7 +24543,7 @@ CharacterController:
   m_StepOffset: 0.75
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.01
-  m_Center: {x: 0, y: 0.2, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!114 &6982113847047416725
 MonoBehaviour:
   m_ObjectHideFlags: 0

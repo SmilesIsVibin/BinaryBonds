@@ -54,7 +54,7 @@ public class RobotBoxInteraction : MonoBehaviour
         }
     }
 
-    private void StartInteraction(BoxPullPush box)
+    public void StartInteraction(BoxPullPush box)
     {
         isInteracting = true;
         robotController.GrabBox();
@@ -65,7 +65,7 @@ public class RobotBoxInteraction : MonoBehaviour
         interactionPopup.SetActive(false);
     }
 
-    private void StopInteraction()
+    public void StopInteraction()
     {
         isInteracting = false;
         robotController.ReleaseBox();

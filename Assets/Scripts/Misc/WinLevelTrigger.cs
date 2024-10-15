@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class WinLevelTrigger : MonoBehaviour
 {
-    public string tagName;
+    public int charReq;
+    public int currentChars;
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(tagName))
+        if (other.CompareTag("Player") || other.CompareTag("Player_Elara") || other.CompareTag("Player_Happy"))
         {
-            GameManager.Instance.WinLevel();
+            currentChars++;
+            if(currentChars >= charReq){
+                GameManager.Instance.WinLevel();
+            }
         }
     }
 }

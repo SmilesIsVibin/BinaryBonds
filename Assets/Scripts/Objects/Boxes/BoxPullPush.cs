@@ -15,7 +15,11 @@ public class BoxPullPush : MonoBehaviour
 
     public void DetachFromPlayer()
     {
+        if(fixedJoint == null){
+            return;
+        }else{
         fixedJoint.connectedBody = null;
+        }
     }
 
     void OnJointBreak(float breakForce)

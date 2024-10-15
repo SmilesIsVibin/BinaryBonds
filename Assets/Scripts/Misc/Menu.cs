@@ -11,6 +11,8 @@ public class Menu : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] public GameObject mainMenu;
     [SerializeField] public GameObject levelSelectMenu;
+    [SerializeField] public GameObject map1Menu;
+    [SerializeField] public GameObject map2Menu;
     [SerializeField] public GameObject settingsMenu;
     [SerializeField] public SceneTransitions sceneTransitions;
     [SerializeField] public float sceneOffset;
@@ -202,6 +204,11 @@ public class Menu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void SwitchMap(){
+        map1Menu.SetActive(!map1Menu.activeSelf);
+        map2Menu.SetActive(!map2Menu.activeSelf);
     }
 }
 
