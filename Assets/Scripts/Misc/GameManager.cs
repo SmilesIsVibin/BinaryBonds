@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Slider musicVolumeSlider;
     [SerializeField] public Slider sfxVolumeSlider;
     [SerializeField] public AudioMixer audioMixer;
+    [SerializeField] public PlayerLevelSaveData playerLevelSaveData;
+    [SerializeField] public int levelUnlockedIndex;
 
     void Start()
     {
@@ -230,6 +232,7 @@ public class GameManager : MonoBehaviour
         audioSource.Pause();
         Time.timeScale = 0f;
         winLevelPanel.SetActive(true);
+        playerLevelSaveData.SaveLevelCompletion(levelUnlockedIndex);
         Cursor.lockState = CursorLockMode.None;
     }
 

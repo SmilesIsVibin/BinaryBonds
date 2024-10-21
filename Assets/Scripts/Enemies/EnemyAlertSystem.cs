@@ -7,11 +7,6 @@ public class EnemyAlertSystem : MonoBehaviour
 
     private float alertTimer;
 
-    void Start()
-    {
-        // Initialization code if needed
-    }
-
     void Update()
     {
         if (isAlerting)
@@ -19,7 +14,6 @@ public class EnemyAlertSystem : MonoBehaviour
             alertTimer -= Time.deltaTime;
             if (alertTimer <= 0)
             {
-                // Reset alerting after some time if needed
                 isAlerting = false;
             }
         }
@@ -27,8 +21,6 @@ public class EnemyAlertSystem : MonoBehaviour
 
     public void AlertNearbyEnemies()
     {
-        // Implement the logic to alert nearby enemies
-        // For example:
         foreach (var enemy in FindObjectsOfType<EnemyAlertSystem>())
         {
             if (enemy != this)
@@ -36,8 +28,6 @@ public class EnemyAlertSystem : MonoBehaviour
                 enemy.isAlerting = true;
             }
         }
-
-        // Start the alert timer
         alertTimer = alertTime;
         isAlerting = true;
     }

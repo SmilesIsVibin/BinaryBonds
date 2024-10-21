@@ -3350,6 +3350,7 @@ GameObject:
   - component: {fileID: 1287052069}
   - component: {fileID: 1287052070}
   - component: {fileID: 1287052071}
+  - component: {fileID: 1287052072}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3401,6 +3402,8 @@ MonoBehaviour:
   musicVolumeSlider: {fileID: 4577569365871506508}
   sfxVolumeSlider: {fileID: 7125633499957373197}
   audioMixer: {fileID: 24100000, guid: 4d37a02668bbf374e9c6ee4544ddc7f2, type: 2}
+  playerLevelSaveData: {fileID: 1287052072}
+  levelUnlockedIndex: 2
 --- !u!114 &1287052068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3557,6 +3560,19 @@ MonoBehaviour:
   girlIconDeactive: {fileID: 0}
   robotIconActive: {fileID: 0}
   robotIconDeactive: {fileID: 0}
+--- !u!114 &1287052072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287052065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ecc34170128db24c942ff7db1563391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSaves: 
 --- !u!1 &1330004104
 GameObject:
   m_ObjectHideFlags: 0

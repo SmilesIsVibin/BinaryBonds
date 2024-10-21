@@ -5,10 +5,8 @@ public class EnemyAIController : MonoBehaviour
 {
     public enum EnemyState { Idle, Patrolling, Suspicious, Alerted, Chasing, Returning }
     public EnemyState currentState;
-
     private NavMeshAgent agent;
     private EnemyDetection detection;
-    private EnemyChase chase;
     private EnemyAlertSystem alertSystem;
     public Animator animator;
 
@@ -22,11 +20,12 @@ public class EnemyAIController : MonoBehaviour
     private bool isIdle;
     public bool alerted;
 
+    public float chaseTime = 5f;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         detection = GetComponent<EnemyDetection>();
-        chase = GetComponent<EnemyChase>();
         alertSystem = GetComponent<EnemyAlertSystem>();
 
         if (patrolPoints.Length > 1)
@@ -92,6 +91,7 @@ public class EnemyAIController : MonoBehaviour
         {
             if (Random.Range(0f, 1f) < 0.3f)
             {
+                Debug.Log("Enemy is Idling");
                 SetState(EnemyState.Idle);
                 return;
             }
@@ -106,7 +106,6 @@ public class EnemyAIController : MonoBehaviour
         {
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
             agent.SetDestination(patrolPoints[currentPatrolIndex].position);
-            animator.SetBool("isIdling", false);
             animator.SetBool("isPatrolling", true);
         }
     }
@@ -139,9 +138,6 @@ public class EnemyAIController : MonoBehaviour
 
     void ChasePlayer()
     {
-        Debug.Log("Chasing");
-        animator.SetBool("isAlerted", false);
-        animator.SetBool("isChasing", true);
         if (detection.IsPlayerDetected)
         {
             agent.SetDestination(detection.lastKnownPlayerPosition);
@@ -150,6 +146,12 @@ public class EnemyAIController : MonoBehaviour
         {
             SetState(EnemyState.Returning);
         }
+    }
+
+    public void InitiateChase(){
+        Debug.Log("Chasing");
+        animator.SetBool("isAlerted", false);
+        animator.SetBool("isChasing", true);
     }
 
     void ReturnToPatrol()

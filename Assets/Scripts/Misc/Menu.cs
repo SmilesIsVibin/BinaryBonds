@@ -36,13 +36,23 @@ public class Menu : MonoBehaviour
     [SerializeField] private TMP_Text levelObjectivesText;
     [SerializeField] private GameObject levelInfoPanel;
 
+    [SerializeField] public List<GameObject> levelButtons = new List<GameObject>();
+    [SerializeField] public GameObject goToMap2Button;
+    [SerializeField] public PlayerLevelSaveData playerLevelSaveData;
+
     void Start()
     {
+        Invoke(nameof(StartMenu), 0.5f);
+    }
+
+    IEnumerator StartMenu(){
+        yield return new WaitForSeconds(1.5f);
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
         SetUpVolumeLevels();
         ViewAudioSettings();
         CloseSelectLevel();
+        LevelDataSetup();
     }
 
     public void OpenSelectLevel(int index){
@@ -209,6 +219,31 @@ public class Menu : MonoBehaviour
     public void SwitchMap(){
         map1Menu.SetActive(!map1Menu.activeSelf);
         map2Menu.SetActive(!map2Menu.activeSelf);
+    }
+    public void LevelDataSetup(){
+        for(int i = 0; i < 6; i++){
+            if(playerLevelSaveData.levelSaves[i] == 1){
+                levelButtons[i].SetActive(true);
+            }else{
+                levelButtons[i].SetActive(false);
+            }
+        }
+
+        if(playerLevelSaveData.levelSaves[3] == 1){
+            goToMap2Button.SetActive(true);
+        }else{
+            goToMap2Button.SetActive(false);
+        }
+    }
+
+    public void UnlockLevels(){
+        playerLevelSaveData.UnlockAllLevels();
+        LevelDataSetup();
+    }
+
+    public void ClearLevels(){
+        playerLevelSaveData.ClearAllLevels();
+        LevelDataSetup();
     }
 }
 

@@ -6,6 +6,7 @@ public class EnemyChase : MonoBehaviour
 
     private Transform player;
     private EnemyAIController aiController;
+    private EnemyDetection enemyDetection;
     private float chaseTimer = 0f;
     private bool isChasing = false;
 
@@ -13,6 +14,7 @@ public class EnemyChase : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         aiController = GetComponent<EnemyAIController>();
+        enemyDetection = GetComponent<EnemyDetection>();
     }
 
     public void ChasePlayer()

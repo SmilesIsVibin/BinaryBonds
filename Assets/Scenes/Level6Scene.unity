@@ -9197,7 +9197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978813326}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0010727706, y: 0.9987655, z: -0.02495357, w: -0.042937595}
+  m_LocalRotation: {x: -0.0010727706, y: 0.9987655, z: -0.024953546, w: -0.042937633}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9813,7 +9813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043279768}
   serializedVersion: 2
-  m_LocalRotation: {x: -1.071392e-10, y: 0.99875855, z: -0.0498137, w: -0.000000002148128}
+  m_LocalRotation: {x: 1.0713917e-10, y: 0.99875855, z: -0.0498137, w: 0.0000000021481275}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13273,7 +13273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355182235}
   serializedVersion: 2
-  m_LocalRotation: {x: 2.3246148e-10, y: 0.99990886, z: -0.013500972, w: 0.000000017216559}
+  m_LocalRotation: {x: 2.329375e-10, y: 0.99990886, z: -0.013500974, w: 0.000000017251812}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15958,6 +15958,7 @@ GameObject:
   - component: {fileID: 1603598303}
   - component: {fileID: 1603598304}
   - component: {fileID: 1603598307}
+  - component: {fileID: 1603598308}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -15994,6 +15995,8 @@ MonoBehaviour:
   musicVolumeSlider: {fileID: 156041222}
   sfxVolumeSlider: {fileID: 351759155}
   audioMixer: {fileID: 24100000, guid: 4d37a02668bbf374e9c6ee4544ddc7f2, type: 2}
+  playerLevelSaveData: {fileID: 1603598308}
+  levelUnlockedIndex: 7
 --- !u!114 &1603598303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16100,6 +16103,19 @@ MonoBehaviour:
   girlIconDeactive: {fileID: 1188945161}
   robotIconActive: {fileID: 1271330883}
   robotIconDeactive: {fileID: 1502836535}
+--- !u!114 &1603598308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603598301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ecc34170128db24c942ff7db1563391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSaves: 
 --- !u!1 &1611916568
 GameObject:
   m_ObjectHideFlags: 0
@@ -16556,7 +16572,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638249384}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0004876447, y: 0.9990128, z: 0.011343031, w: -0.042948253}
+  m_LocalRotation: {x: 0.0004876446, y: 0.9990128, z: 0.011343029, w: -0.042948253}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
