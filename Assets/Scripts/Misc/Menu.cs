@@ -42,10 +42,11 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        Invoke(nameof(StartMenu), 0.5f);
+        StartCoroutine(nameof(StartMenu));
     }
 
     IEnumerator StartMenu(){
+        Debug.Log("Setting Up");
         yield return new WaitForSeconds(1.5f);
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
@@ -223,6 +224,7 @@ public class Menu : MonoBehaviour
     public void LevelDataSetup(){
         for(int i = 0; i < 6; i++){
             if(playerLevelSaveData.levelSaves[i] == 1){
+                Debug.Log("Level " + (i + 1) + " Button is active");
                 levelButtons[i].SetActive(true);
             }else{
                 levelButtons[i].SetActive(false);

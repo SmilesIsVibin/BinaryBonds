@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public enum EnemyState { Idle, Patrol, Suspicion, Chase, Return }
-    private EnemyState currentState;
+    [SerializeField] private EnemyState currentState;
 
     // NavMesh and movement
     private NavMeshAgent agent;
@@ -13,11 +13,11 @@ public class EnemyAI : MonoBehaviour
 
     // Patrol-related variables
     public Transform[] patrolPoints;
-    private int patrolIndex;
+    public int patrolIndex;
     private bool patrolForward = true;
     public float idleDurationMin = 1f, idleDurationMax = 3f;
     private float idleTimer;
-    private bool isStationary = false;
+    public bool isStationary = false;
 
     // Detection & suspicion
     public Transform player;
@@ -26,9 +26,13 @@ public class EnemyAI : MonoBehaviour
     public float fovRange = 10f;
     public float backFOVRange = 3f;
     public float verticalFOV = 45f;
+
+    public float idleRotTimer = 5f;
+
+    public float idleRotCount;
     public LayerMask viewMask;
     public float suspicionThreshold = 5f;
-    private float suspicionLevel;
+    [SerializeField]private float suspicionLevel;
     public float closeDetectionRange = 1.5f;
 
     // Chase state variables
@@ -44,7 +48,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject suspicionIndicator;
     
     // Kill trigger
-    public GameObject killZone;
+    public BoxCollider killZone;
 
     void Start()
     {
@@ -52,7 +56,8 @@ public class EnemyAI : MonoBehaviour
         currentState = EnemyState.Idle;
         patrolIndex = 0;
         idleTimer = Random.Range(idleDurationMin, idleDurationMax);
-        killZone.SetActive(false); // Disable kill zone at the start
+        killZone.enabled = false; // Disable kill zone at the start
+        disinterestTimer = disinterestTimerMax;
     }
 
     void Update()
@@ -61,9 +66,11 @@ public class EnemyAI : MonoBehaviour
         {
             case EnemyState.Idle:
                 animator.SetBool("isIdling", true);
+                animator.SetBool("isPatrolling", false);
                 HandleIdle();
                 break;
             case EnemyState.Patrol:
+                animator.SetBool("isIdling", false);
                 animator.SetBool("isPatrolling", true);
                 HandlePatrol();
                 break;
@@ -71,17 +78,20 @@ public class EnemyAI : MonoBehaviour
                 HandleSuspicion();
                 break;
             case EnemyState.Chase:
+                animator.SetBool("isIdling", false);
+                animator.SetBool("isPatrolling", false);
                 animator.SetBool("isChasing", true);
                 HandleChase();
                 break;
             case EnemyState.Return:
                 animator.SetBool("isPatrolling", true);
+                animator.SetBool("isChasing", false);
                 HandleReturn();
                 break;
         }
 
         // Always check for player detection
-        if (currentState != EnemyState.Chase && currentState != EnemyState.Return)
+        if (currentState != EnemyState.Chase)
         {
             CheckForPlayer();
         }
@@ -92,14 +102,22 @@ public class EnemyAI : MonoBehaviour
     {
         if (isStationary) // Rotate in place to simulate guard looking around
         {
-            transform.Rotate(0, Random.Range(-45f, 45f) * Time.deltaTime, 0);
+            idleRotCount += Time.deltaTime;
+            if(idleRotCount >= idleRotTimer){
+                transform.Rotate(0, Random.Range(-45f, 45f) * Time.deltaTime, 0);
+                idleRotCount = 0f;
+            }
         }
-        idleTimer -= Time.deltaTime;
 
-        if (idleTimer <= 0)
-        {
-            idleTimer = Random.Range(idleDurationMin, idleDurationMax);
-            currentState = EnemyState.Patrol;
+        if(patrolPoints.Length > 1){
+            idleTimer -= Time.deltaTime;
+
+            if (idleTimer <= 0)
+            {
+                idleTimer = Random.Range(idleDurationMin, idleDurationMax);
+                isStationary = false;
+                currentState = EnemyState.Patrol;
+            }
         }
     }
 
@@ -110,10 +128,12 @@ public class EnemyAI : MonoBehaviour
 
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
-            if (Random.Range(0f, 1f) < 0.3f) // 30% chance to idle
+            if (Random.Range(1, 10f) < 3f) // 30% chance to idle
             {
+                Debug.Log("Enemy is now idling, change from patrol");
                 currentState = EnemyState.Idle;
                 idleTimer = Random.Range(idleDurationMin, idleDurationMax);
+                isStationary = true;
             }
             else
             {
@@ -155,6 +175,7 @@ public class EnemyAI : MonoBehaviour
 
         if (suspicionLevel >= suspicionThreshold)
         {
+            animator.SetTrigger("isAlerted");
             StartChase();
         }
         else if (!IsPlayerVisible())
@@ -163,6 +184,7 @@ public class EnemyAI : MonoBehaviour
             if (suspicionLevel <= 0)
             {
                 suspicionIndicator.SetActive(false);
+                agent.isStopped = false;
                 currentState = EnemyState.Patrol;
             }
         }
@@ -171,6 +193,7 @@ public class EnemyAI : MonoBehaviour
     // Handle the Chase state
     void HandleChase()
     {
+        agent.isStopped = false;
         agent.speed = chaseSpeed;
         agent.SetDestination(player.position);
 
@@ -184,16 +207,16 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            disinterestTimer = disinterestTimerMax;
+            if(disinterestTimer <= disinterestTimerMax ){
+                disinterestTimer += Time.deltaTime;
+            }
         }
     }
 
     // Handle the Return state
     void HandleReturn()
     {
-        suspicionLevel = 0;
-        disinterestTimer = disinterestTimerMax;
-        suspicionIndicator.SetActive(false);
+        ResetAI();
 
         // Go to nearest patrol point instead of the first one
         Transform nearestPatrolPoint = GetNearestPatrolPoint();
@@ -226,7 +249,7 @@ public class EnemyAI : MonoBehaviour
         isAlerted = true;
         suspicionIndicator.SetActive(false);
         disinterestTimer = disinterestTimerMax;
-        killZone.SetActive(true); // Enable kill zone
+        killZone.enabled = true; // Enable kill zone
         currentState = EnemyState.Chase;
     }
 
@@ -250,6 +273,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (!Physics.Linecast(transform.position, player.position, viewMask))
             {
+                Debug.Log("I can see the player");
                 return true;
             }
         }
@@ -272,15 +296,17 @@ public class EnemyAI : MonoBehaviour
         isAlerted = false;
         suspicionLevel = 0;
         disinterestTimer = disinterestTimerMax;
-        killZone.SetActive(false); // Disable kill zone
+        killZone.enabled = false; // Disable kill zone
+        animator.ResetTrigger("isAlerted");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isAlerted && other.CompareTag("Player"))
-        {
+        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Player_Elara")){
             // Handle game over or player capture logic
             Debug.Log("Player caught!");
+            PlayerManager.Instance.PlayerGameOver();
         }
+        
     }
 }

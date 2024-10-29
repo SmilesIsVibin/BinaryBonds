@@ -7,7 +7,7 @@ public class PlayerLevelSaveData : MonoBehaviour
 {
     public List<int> levelSaves = new List<int>();
 
-    void Start(){
+    void Awake(){
         if(SceneManager.GetActiveScene().buildIndex == 0){
             SetupLevelSaveData();
         }
@@ -102,8 +102,9 @@ public class PlayerLevelSaveData : MonoBehaviour
         PlayerPrefs.SetInt("Level4SaveData", 0);
         PlayerPrefs.SetInt("Level5SaveData", 0);
         PlayerPrefs.SetInt("Level6SaveData", 0);
-        for(int i = 0; i < 6; i++){
-            levelSaves.Add(1);
+        levelSaves.Add(1);
+        for(int i = 1; i < 6; i++){
+            levelSaves.Add(0);;
         }
     }
 }

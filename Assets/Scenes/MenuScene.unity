@@ -10620,7 +10620,7 @@ MonoBehaviour:
 
       Exit
       The Base'
-    levelIndexName: Level1Scene
+    levelIndexName: Level1-Part1Scene
   - levelName: The Unknown
     levelDescription: It is difficult to go on an exploration if you're just wandering
       around. Luckily, there's a nearby neighborhood that might have something I
@@ -10633,7 +10633,7 @@ MonoBehaviour:
       you find something
 
       Avoid Watchers'
-    levelIndexName: Level2Scene
+    levelIndexName: Level2-Part1Scene
   - levelName: Back To School
     levelDescription: The piece of paper I got had directions to this preschool ruins.
       It claims to have a robot that would help anyone in need. I guess it's my best
@@ -10649,7 +10649,7 @@ MonoBehaviour:
       Basement
 
       Find the Robot'
-    levelIndexName: Level3Scene
+    levelIndexName: Level3-Part1Scene
   - levelName: Natural Friendship
     levelDescription: Exploring the preschool, I found the robot hidden away in the
       storage area. The robot says its name is Happy, and it would do its best in
@@ -10662,7 +10662,7 @@ MonoBehaviour:
       the Legion Robots
 
       Leave the Preschool'
-    levelIndexName: Level4Scene
+    levelIndexName: Level4-Part1Scene
   - levelName: Legion Run
     levelDescription: The Legion found us. They are actively chasing us down the
       streets of this neighborhood. Happy is pushing its limits to out run them.

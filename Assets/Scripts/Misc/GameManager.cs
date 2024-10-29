@@ -239,7 +239,6 @@ public class GameManager : MonoBehaviour
     public void NextLevel(){
         Time.timeScale = 1f;
         StartCoroutine(nameof(CloseSceneTransition));
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void GameOverLevel(){
@@ -256,5 +255,6 @@ public class GameManager : MonoBehaviour
     IEnumerator CloseSceneTransition(){
         sceneTransitions.CloseTransition();
         yield return new WaitForSeconds(sceneOffset);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
