@@ -28,9 +28,8 @@ public class ObjectivesManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        if (allObjectives.Count > 0)
+    public void SetupInitialObjectives(){
+                if (allObjectives.Count > 0)
         {
             SetObjective(0); // Start with the first objective in the list
         }

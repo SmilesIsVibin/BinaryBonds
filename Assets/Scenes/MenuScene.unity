@@ -10650,19 +10650,6 @@ MonoBehaviour:
 
       Find the Robot'
     levelIndexName: Level3-Part1Scene
-  - levelName: Natural Friendship
-    levelDescription: Exploring the preschool, I found the robot hidden away in the
-      storage area. The robot says its name is Happy, and it would do its best in
-      helping me. Well first things first, time to leave this school
-    levelObjectives: 'Objectives:
-
-      Leave the Basement Area
-
-      Move through
-      the Legion Robots
-
-      Leave the Preschool'
-    levelIndexName: Level4-Part1Scene
   - levelName: Legion Run
     levelDescription: The Legion found us. They are actively chasing us down the
       streets of this neighborhood. Happy is pushing its limits to out run them.
@@ -10690,7 +10677,6 @@ MonoBehaviour:
   - {fileID: 2124187543}
   - {fileID: 1048178756}
   - {fileID: 1902512768}
-  - {fileID: 1539820060}
   - {fileID: 635858469}
   - {fileID: 249056955}
   goToMap2Button: {fileID: 199883633}
@@ -12871,7 +12857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1539820061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16823,6 +16809,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2236667091770956369, guid: e192b174efe678147a33ae1704532710, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576270226355695717, guid: e192b174efe678147a33ae1704532710, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3810924099472148768, guid: e192b174efe678147a33ae1704532710, type: 3}

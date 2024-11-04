@@ -111,6 +111,6 @@ public class PlayerManager : MonoBehaviour
             girlPlayer.gameObject.SetActive(false);
             robotPlayer.gameObject.SetActive(false);
         }
-        GameManager.Instance.GameOverLevel();
+        GameManager.Instance.GameOverCutscene();
     }
 }

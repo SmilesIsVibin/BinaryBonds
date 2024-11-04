@@ -1,0 +1,459 @@
+fileFormatVersion: 2
+guid: a5b2b1e1f2f6880448b30d8574056dd2
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Basement
+    second: {fileID: 2100000, guid: c970d7e5bc1d7dd4e9bf4fe476ba5b75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book1
+    second: {fileID: 2100000, guid: 32400d6badcc9ae46bd7ac5cc2c2f526, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book2
+    second: {fileID: 2100000, guid: ef0e7e06ab9d52d41be3d67ad366a004, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinet1
+    second: {fileID: 2100000, guid: c07a632304de8324b85bdb8603e7b6f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinet2
+    second: {fileID: 2100000, guid: ee81bb2b8a758cb41b1f3ab7992590e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinet3
+    second: {fileID: 2100000, guid: 14527b8b45f7fe04a9cfb6d2205f5a2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carpet1
+    second: {fileID: 2100000, guid: e1b969645b59b974eadde6ce15e42c9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carpet2
+    second: {fileID: 2100000, guid: 715c4280c3ebc8944b0a3f6a9bd28578, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cloth1
+    second: {fileID: 2100000, guid: a71c23bafda52c6448e92b302c9e7383, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 481e70191bf71db48846af9f5d5855ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door.001
+    second: {fileID: 2100000, guid: 53957586823af9b489256eb2c42d8897, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Drawer1
+    second: {fileID: 2100000, guid: e87f2351a228aec43ace6d50bf3108cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Drawer2
+    second: {fileID: 2100000, guid: da6d8fb58bf1b4044b62ea1cdc5af583, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frame
+    second: {fileID: 2100000, guid: 8ff44e397fac9bb4cb5b6d9de5f54166, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fridge
+    second: {fileID: 2100000, guid: 840d3f9873e974b4aab8405561e5f1f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gras
+    second: {fileID: 2100000, guid: f100bb8318eccc4448d55139a41755af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: a3e1725e44109d044b93027eaa310474, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: d913abf4da2f4b84893128b7e08e5148, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handle
+    second: {fileID: 2100000, guid: 855026a32f99c614fb1eb44b0692e474, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handle.001
+    second: {fileID: 2100000, guid: 0fa580f7b87429c4dbf60ac8d455cb73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hourse1Porch2
+    second: {fileID: 2100000, guid: b8f070d7a5a9d064eb1f9d9122ef584e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House1Floor
+    second: {fileID: 2100000, guid: 8b5f64e3043903044a26435dfb07db7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House1Porch1
+    second: {fileID: 2100000, guid: 5769ec2c9f9c04e46bc712d10aa6c3ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House2Floor
+    second: {fileID: 2100000, guid: 45ee960a215c05b488dae597975acc31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HouseFloor3
+    second: {fileID: 2100000, guid: 5f828629568f0d64284b917ddb171fab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HouseRoof1
+    second: {fileID: 2100000, guid: f69f64a5f14ab97478300ae1678a6cda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HouseRoof2
+    second: {fileID: 2100000, guid: f4aedf3896cd6e0499ddb4a0cd7f7a3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HouseRoof3
+    second: {fileID: 2100000, guid: 76883b0998356244fa14a1e10890bba8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HouseWalls1
+    second: {fileID: 2100000, guid: 7be8a111b656ca24dbbbece3bec7dcaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HouseWalls2
+    second: {fileID: 2100000, guid: 701bd4dfaf52dda4e9c9371d962a79cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HouseWalls3
+    second: {fileID: 2100000, guid: 4869c924b40f8d3499e49221cbe56198, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LP_bark
+    second: {fileID: 2100000, guid: f701ccb90ced3284d88779022855c61b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LP_wood
+    second: {fileID: 2100000, guid: 1a3944a787b935d43bbd4b69399f956b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 72bc95a7302bd8247877cbabae14e5a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Old Wood
+    second: {fileID: 2100000, guid: 2ffdb9572dca80d45a1c6aa259c04834, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Old Wood.001
+    second: {fileID: 2100000, guid: cececba1592113a45af281879e9000f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PreschoolTexture
+    second: {fileID: 2100000, guid: 63deecc097a0d9246bc25bb1c4b4e133, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road
+    second: {fileID: 2100000, guid: 4eb4a6e142a33a546a102c810dff5d48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RoadBorder
+    second: {fileID: 2100000, guid: f06610f4a370be04d9715badb6d1c9eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rust
+    second: {fileID: 2100000, guid: aa0aa607c3595c44697c79b92e39ce33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rust.001
+    second: {fileID: 2100000, guid: c459b8343475e5148914bde0b68bb72d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rust.002
+    second: {fileID: 2100000, guid: 2c39941a032982f4a8aa7b2241a0b76e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rust.003
+    second: {fileID: 2100000, guid: 0367db406d08d1b48b73253172711abc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rust.004
+    second: {fileID: 2100000, guid: 941e1ddda21693f49a97ce6826bcd533, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rust.005
+    second: {fileID: 2100000, guid: cacd66b6436c5e444adeaa31bde66eb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TV
+    second: {fileID: 2100000, guid: 159a3cd738c04934b92858f042176b48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table1
+    second: {fileID: 2100000, guid: 8a6ffe87ee0d4f449899eecdcb07e390, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table2
+    second: {fileID: 2100000, guid: 4e0e5792adcae1a45b6163f714134c2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Transparent
+    second: {fileID: 2100000, guid: 5fde0131a6933524cb902aa79d6b47de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Transparent.001
+    second: {fileID: 2100000, guid: d100d3466020e8948b1ac26697afdd0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowFrame
+    second: {fileID: 2100000, guid: 56dcf64f5f642d04bac5141fb7a69027, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 22d44585513b3ed44a040d5e58fc5aa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bark
+    second: {fileID: 2100000, guid: 2feba00e1641eb24ba141de1a46fe467, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bf_wood
+    second: {fileID: 2100000, guid: cb1ab342a81275b4dac1bdc39729359e, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Book2
+    second: {fileID: 2800000, guid: 573d0013ad455184793850654c4617aa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Book4
+    second: {fileID: 2800000, guid: 2ea4187d88d4f444982bed98f692c5d3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cabinet1
+    second: {fileID: 2800000, guid: dfd0db39143520e41a9ec0ebe3f92c22, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cabinet2
+    second: {fileID: 2800000, guid: 1ca51ce7ccf3be440804f911e58e6fd1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Carpet5
+    second: {fileID: 2800000, guid: e06ccec8536d5eb40b735c62ab8cb23f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Carpet6
+    second: {fileID: 2800000, guid: 47fce4b6bbe68ab4fb67f7e0fd00e9a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cloth4
+    second: {fileID: 2800000, guid: 70a80c4a00ee529478a12f62934f0560, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Desk
+    second: {fileID: 2800000, guid: 7ec2ac3a09a8c8842847e8059d8eaac6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Drawer1
+    second: {fileID: 2800000, guid: 92528aa0306dcb346b005def97d2466a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Drawer2
+    second: {fileID: 2800000, guid: 54480bb0615d9c24abc858d26ce0b98b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fridge1
+    second: {fileID: 2800000, guid: e1fbf08307725cd4ab61a85d7b070a39, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2800000, guid: 48408f9f5bfda1047960e4acaf425cc7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PreschoolTexture_Diffuse
+    second: {fileID: 2800000, guid: dc5ef9a0017bbc044a796b002766ad39, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PreschoolTexture_Normal
+    second: {fileID: 2800000, guid: c6f89495912a306498bddec7051e9564, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PreschoolTexture_Roughness
+    second: {fileID: 2800000, guid: 84c5db48c5e954348b8d3e284d8b1769, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TV1
+    second: {fileID: 2800000, guid: 1edc2d81130564640a03d98564e1130a, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

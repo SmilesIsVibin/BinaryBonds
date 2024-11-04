@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject gameOverPanel;
     [SerializeField] public SceneTransitions sceneTransitions;
     [SerializeField] public float sceneOffset;
+    public PlayableDirector gameOverScene;
     private bool gameStarted;
     private bool isPaused;
 
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Instance = this;
+        Cursor.lockState = CursorLockMode.Locked;
         pauseMenu.SetActive(false);
         objectivesPage.SetActive(true);
         settingsPage.SetActive(false);
@@ -241,6 +244,10 @@ public class GameManager : MonoBehaviour
         StartCoroutine(nameof(CloseSceneTransition));
     }
 
+    public void GameOverCutscene(){
+        gameOverScene.Play();
+    }
+
     public void GameOverLevel(){
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
@@ -250,6 +257,7 @@ public class GameManager : MonoBehaviour
     IEnumerator GameBegin(){
         yield return new WaitForSeconds(2f);
         gameStarted = true;
+        ObjectivesManager.Instance.SetupInitialObjectives();
     }
 
     IEnumerator CloseSceneTransition(){

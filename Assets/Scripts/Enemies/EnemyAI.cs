@@ -37,7 +37,7 @@ public class EnemyAI : MonoBehaviour
 
     // Chase state variables
     public float detectionPauseTime = 0.5f;
-    private bool isAlerted;
+    //private bool isAlerted;
     public float disinterestTimerMax = 5f;
     private float disinterestTimer;
 
@@ -169,7 +169,6 @@ public class EnemyAI : MonoBehaviour
     // Handle the Suspicion state
     void HandleSuspicion()
     {
-        agent.isStopped = true;
         suspicionIndicator.SetActive(true);
         suspicionLevel += Time.deltaTime * (1f / Mathf.Max(Vector3.Distance(transform.position, player.position), 1f));
 
@@ -246,7 +245,7 @@ public class EnemyAI : MonoBehaviour
     // Start the chase
     void StartChase()
     {
-        isAlerted = true;
+        //isAlerted = true;
         suspicionIndicator.SetActive(false);
         disinterestTimer = disinterestTimerMax;
         killZone.enabled = true; // Enable kill zone
@@ -293,7 +292,7 @@ public class EnemyAI : MonoBehaviour
     // Reset all timers and states
     void ResetAI()
     {
-        isAlerted = false;
+        //isAlerted = false;
         suspicionLevel = 0;
         disinterestTimer = disinterestTimerMax;
         killZone.enabled = false; // Disable kill zone

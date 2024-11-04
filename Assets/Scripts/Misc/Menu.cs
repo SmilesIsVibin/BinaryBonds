@@ -42,6 +42,7 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         StartCoroutine(nameof(StartMenu));
     }
 
