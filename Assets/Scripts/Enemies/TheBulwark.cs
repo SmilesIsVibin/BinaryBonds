@@ -143,11 +143,9 @@ public class TheBulwark : MonoBehaviour
             phaseTransitionCounter += Time.deltaTime;
             if(phaseTransitionCounter >= phaseTransitionTimer){
                 phaseTransitionCounter = 0f;
-                isActive = true;
                 isImmune = false;
                 isPhaseTransitioning = false;
                 animator.SetTrigger("EndVortex");
-                bossPhase += 1;
             }
         }
     }
@@ -171,6 +169,14 @@ public class TheBulwark : MonoBehaviour
         isActive = false;
         DisableArms();
         animator.SetTrigger("Death");
+    }
+
+    IEnumerator Retreat(){
+        yield return new WaitForSeconds(7.5f);
+        animator.SetTrigger("Retreat");
+        yield return new WaitForSeconds(7.5f);
+                bossPhase += 1;
+                isActive = true;
     }
 
     public void HurtBoss(){
