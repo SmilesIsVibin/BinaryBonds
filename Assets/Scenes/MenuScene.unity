@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: b8770bff262140f42904eb7d44179795, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: ff66896a85c19f84fb3093339476ebb9, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 59d5875b9c9cf504b8c2c478ca246250, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10620,7 +10620,7 @@ MonoBehaviour:
 
       Exit
       The Base'
-    levelIndexName: Level1-Part1Scene
+    levelIndexName: Level1-Part1-NewVer
   - levelName: The Unknown
     levelDescription: It is difficult to go on an exploration if you're just wandering
       around. Luckily, there's a nearby neighborhood that might have something I
@@ -16809,7 +16809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2236667091770956369, guid: e192b174efe678147a33ae1704532710, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3576270226355695717, guid: e192b174efe678147a33ae1704532710, type: 3}
       propertyPath: m_Enabled
