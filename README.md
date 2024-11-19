@@ -1,2 +1,2 @@
 # BinaryBonds
- 3D Adventure Puzzle Game
+ 3D Adventure Puzzle Game developed for Android
